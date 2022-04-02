@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traducteur Franco-Lokpa</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="téléchargement.jpeg">
+    <link rel="stylesheet" href="page.acceuil.css">
+</head>
+
+<body>
+    <style>
+
+    </style>
+
+    <div class="entete">
+        <div class="menu" id="menu" onclick="changer(this)">
+            <div class="tiret1"></div>
+            <div class="tiret2"></div>
+            <div class="tiret3"></div>
+        </div>
+        <div class="span" id="span"> <span>DIC- français-Lokpa</span></div>
+
+    </div>
+    <div id="interne">
+        <div id="sous_entete">
+            <div class="text-dark" style="font-size:40px ;" id="acceuil"><i class="fa fa-home"></i>Acceuil</div>
+            <div class="apk"><button><a href="apk_info.html">A propos</a></button></div><br>
+        </div>
+        <div class="zone_traduction" id="traduc_zone">
+            <span>Zone de traduction des mots</span>
+        </div>
+        <form class="zone_saisie" id="saisie" name="saisie" onsubmit="return traduire()">
+            <input type="text" placeholder="Saisissez le mot à traduire" id="input" name="input">
+            <button id="boutton">Traduire</button>
+        </form>
+        <div class="changement" id="changement">
+            <div class="lokpa" style="color: yellowgreen; width: 19%;margin-left: 15%">LOKPA</div>
+            <div class="roteur" id="roteur" style="font-size:25px; width: 10%;margin-left: 5%;" onclick="rotation()">
+                <button class="roter" id="roter" style="background-color: rgb(14, 14, 51);color: white; ">
+                    =>
+                </button>
+            </div>
+            <div class="francais" style="color: yellowgreen; margin-right: 5%;">FRANCAIS</div>
+        </div>
+        <!--<form action="" id="form" name="form"><input id="input" name="input" type="search"
+                placeholder="Pèèki lopka taa"></form>-->
+    </div>
+    </div>
+    <div class="contenu" id="contenu">
+        <ul id="ul">
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-home"></i></a><a href="page_Acceuil.html">
+                    <span>Acceuil</span>
+                </a></li>
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-cog"></i></a><a href="contenu.html">
+                    <span>Paramètres</span>
+                </a></li>
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-question-circle"></i></a><a
+                    href="contenu.html"> <span>Aides</span>
+                </a></li>
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-history"></i></a><a
+                    href="contenu.html"><span>Historique</span></a></li>
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-book"></i></a><a
+                    href=""><span>Apprendre</span></a></li>
+            <li> <a class="text-dark" style="font-size:40px ;"><i class="fa fa-heart"></i></a><a
+                    href=""><span>Favoris</span></a></li>
+            <li><a class="text-dark" style="font-size:40px ;"><i class="fa fa-user"></i></a><a href=""><span>Se
+                        Connecter</span></a></li>
+            <li><a class="text-dark" style="font-size:35px ;"><i class="fa fa-times"></i></a><a
+                    href=""><span>Quitter</span></a></li>
+            <span class="oi" data-glyph="battery-full"></span>
+        </ul>
+
+    </div>
+    <script style="height: 0%;">
+        var menu = document.getElementById("menu")
+        var contenu = document.getElementById("contenu")
+        var ul = document.getElementById("ul")
+        var tiret1 = document.getElementById("tiret1")
+        var tiret2 = document.getElementById("tiret2")
+        var tiret3 = document.getElementById("tiret3")
+        var corp = document.querySelector('body')
+        clické = false;
+        var i = 0;
+        var j = 0;
+        menu.addEventListener('click',
+            () => {
+                if (!clické) {
+
+                    i = i + 1;
+                    contenu.style.width = "50%"
+                    ul.style.fontSize = "20px"
+                    ul.style.width = "100%"
+                    ul.style.opacity = "1"
+                    corp.style.backgroundColor = "rgb(92, 90, 90)"
+                    clické = !clické;
+                } else {
+
+                    contenu.style.width = "0%"
+                    ul.style.fontSize = "0px"
+                    ul.style.width = "0%"
+                    ul.style.opacity = "0"
+                    corp.style.backgroundColor = "white"
+                    clické = !clické;
+                }
+            }
